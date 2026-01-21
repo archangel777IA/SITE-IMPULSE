@@ -1,19 +1,22 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import Header from "@/components/Header";
 
-export const metadata: Metadata = {
-  title: "IMPULSE",
-  description: "Som, imagem, estratégia e tecnologia integrados para artistas da cena eletrônica.",
-  openGraph: {
-    title: "IMPULSE",
-    images: ["/og.jpg"],
-  },
+export const metadata = {
+  title: "Impulse",
+  description: "Desenvolvimento artístico com estrutura",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body className="bg-black text-white antialiased">
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
